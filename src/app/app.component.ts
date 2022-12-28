@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bosioagu.github.io';
+
+  print(){
+    console.log("print");
+    window.print()
+  }
 }
