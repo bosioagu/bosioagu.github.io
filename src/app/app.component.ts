@@ -9,6 +9,8 @@ export class AppComponent {
   title = 'bosioagu.github.io';
   html = '<h1>Aloha</h1>'
 
+  message = '<div class=\"content-wrapper\" style=\"margin-left: 25px; width: 170px;\"> \n <table border=\"0\"> \n <tbody>    \n <tr> \n <td colspan=\"4\" align=\"center\">   <p style=\"font-size: 15px; color: #000000; margin-top: 15px; width: 5.5cm\">LUZ DEL SUR</p>  </td> \n </tr> \n <tr> \n <td width=\"50%\" class=\"text-left\" style=\"font-size: 10px; color: #000000;\"><span id=\"tkt_fecha\">28/12/2022</span></td> \n <td width=\"50%\" class=\"text-right\" style=\"font-size: 10px; color: #000000;\"><span id=\"tkt_hora\">12:17:22</span></td> \n </tr> \n <tr> \n <td colspan=\"4\"> \n<hr size=\"1\" style=\"border-color: #707070; margin-top: 10px;\"></td> \n </tr> \n <tr> \n <td colspan=\"4\" align=\"center\"> <p style=\"font-size: 12px; color: #000000; margin-top: 20px;\">Su número de atención es:</p> <h2 id=\"tkt_numero\" class=\"numero\" style=\"font-size: 48px; color: #000000; margin-top:      20px;\">K 6</h2> </td> \n </tr> \n <tr> \n <td colspan=\"4\"> \n <hr size=\"1\" style=\"border-color: #707070; margin-top: 12px;\"> </td> \n </tr> \n <tr> \n <td colspan=\"4\" align=\"center\"> <p id=\"tkt_centro_atencion\" style=\"font-size: 12px; color: #000000; margin-top: 4px;\"> Laboratorio</p> </td> \n </tr> \n </tbody>\n </table> \n </div>'
+
   constructor(){
     
   }
@@ -24,12 +26,12 @@ export class AppComponent {
     console.log(this.html)
   }
 
-  message() {
+  showMessage() {
     
 		// parent.postMessage("message to be sent", "http://the-website-that-will-receive-the-msg.com")
 		//parent.postMessage("window:keydown.enter", "*")
-    let message = '<div class="contenedor-totem"><img class="img-totem" src="./assets/image/totem-body.png"><div class="contenedor-ticket"><div class="img-ticket d-flex flex-column align-items-center justify-content-between"><div class="mt-2 w-100 d-flex flex-column align-items-center"><div class="mt-1 linea-separadora"></div><div class="mt-1 linea-separadora"></div></div><img class="mt-1 ticket-logo" src="./assets/image/logo-2-azul.png"><span class="ticket-numero mt-2"> {{numeroDelTurno}} </span><div class="mb-2 w-100 d-flex flex-column align-items-center"><div class="linea-separadora"></div><span class="ticket-texto-footer"></span> Gracias </span><div class="linea-separadora"></div></div></div></div></div>'
-    window.parent.postMessage(message, '*')
-    console.log("mensaje", message)
+    
+    window.parent.postMessage(this.message, '*')
+    console.log("mensaje", this.message)
   }
 }
